@@ -1,0 +1,15 @@
+services:
+
+  php:
+    build:
+      target: prod
+    environment:
+      APP_ENV: prod
+      APP_DEBUG: "0"
+
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    ports:
+      - "8080:80"
